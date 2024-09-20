@@ -1,0 +1,228 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+  .playpen-sans-container {
+  font-family: "Playpen Sans", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+    body, html {
+      height: 100%;
+      /* font-family: Arial, sans-serif; */
+      overflow: auto;
+      background-color: #000000;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 0 50px;
+      background-image: black;
+    }
+
+    .content {
+      z-index: 2;
+      color: white;
+      text-align: left;
+      font-size: 1.2em;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .quote {
+      margin-bottom: 30px;
+      font-style: italic;
+      color: #00bfff;
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #00bfff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #009acd;
+    }
+
+    .earth-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .earth {
+      width: 100%;
+      height: 100%;
+      background-image: url('public/earth.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* New section for cards */
+    .measures-section {
+      padding: 50px;
+      background-color: #000000;
+      color: white;
+      text-align: center;
+    }
+
+    .measures-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #00bfff;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+    }
+
+    /* Spotlight Effect */
+    .card-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at var(--mouseX, 30%) var(--mouseY, 30%), rgba(255, 255, 255, 0.2), transparent 40%);
+      pointer-events: none;
+      transition: all 0.1s ease;
+      z-index: 0;
+    }
+
+    .card-container:hover::before {
+      background-blend-mode: lighten;
+    }
+
+    .card-container:hover .card {
+      background-blend-mode: normal;
+    }
+
+    .card {
+      width: 30%;
+      height: 400px;
+      background-color: #1f1f1f53;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.251);
+    }
+
+    .card-title {
+      font-size: 1.5em;
+      color: #ffffff;
+      margin-bottom: 10px;
+      position: relative;
+      top: 0;
+    }
+
+    .card-details {
+      font-size: 1.2em;
+      color: #009dff;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    /* Remove original hover effect and box shadow */
+    .card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #000000;
+      padding: 40px 0;
+      color: white;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #00bfff;
+    }
+
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #009acd;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      font-size: 1.2em;
+    }
+
+    .contact-details {
+      font-size: 1em;
+    }
+
+  /*   .info {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;
+  color: #00bfff;
+  padding: 20px;            
+
+.info h1 {
+  margin-right: 20px;       
+}
+ */
+ .info{
+  font-family: "Playpen Sans";
+  text-align: center;
+  color: #00bfff;
+  font-size: 1.2em;
+ }
