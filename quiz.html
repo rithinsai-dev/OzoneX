@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ozone Quiz</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .quiz-container {
+      width: 80%;
+      max-width: 600px;
+      padding: 30px;
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.251);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .options button {
+      background-color: #00bfff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .options button:hover {
+      background-color: #009acd;
+    }
+
+    .next-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background-color: #009acd;
+    }
+
+    .explanation {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #ffcccb;
+    }
+
+    .result-container {
+      display: none;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2 id="question">Question will appear here</h2>
+    <div class="options">
+      <button onclick="selectAnswer(0)">Option 1</button>
+      <button onclick="selectAnswer(1)">Option 2</button>
+      <button onclick="selectAnswer(2)">Option 3</button>
+      <button onclick="selectAnswer(3)">Option 4</button>
+    </div>
+    <div id="explanation" class="explanation"></div>
+    <button class="next-btn" id="next-btn" onclick="nextQuestion()">Next Question</button>
+    <div class="result-container" id="result-container">
+      <h2>Quiz Completed</h2>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What is the primary cause of ozone depletion?",
+        options: ["Carbon dioxide", "Chlorofluorocarbons (CFCs)", "Methane", "Nitrous oxide"],
+        correct: 1,
+        explanation: "Chlorofluorocarbons (CFCs) are the main cause of ozone depletion. They release chlorine atoms when broken down by UV radiation, which destroys ozone molecules."
+      },
+      {
+        question: "Which international treaty was established to protect the ozone layer?",
+        options: ["Kyoto Protocol", "Montreal Protocol", "Paris Agreement", "Vienna Convention"],
+        correct: 1,
+        explanation: "The Montreal Protocol was signed in 1987 to phase out the production of substances responsible for ozone depletion."
+      },
+      {
+        question: "Which of the following is a natural source of ozone-depleting substances?",
+        options: ["Volcanic eruptions", "Burning fossil fuels", "Deforestation", "Refrigerant leaks"],
+        correct: 0,
+        explanation: "Volcanic eruptions release large quantities of chlorine and bromine gases, which can deplete the ozone layer."
+      }
+      // Add more questions as needed
+    ];
+
+    let currentQuestion = 0;
+    let wrongAnswers = [];
+    let userSelected = null;
+
+    function loadQuestion() {
+      const questionElement = document.getElementById("question");
+      const optionButtons = document.querySelectorAll(".options button");
+      const explanationElement = document.getElementById("explanation");
+
+      questionElement.textContent = quizData[currentQuestion].question;
+      optionButtons.forEach((button, index) => {
+        button.textContent = quizData[currentQuestion].options[index];
+        button.disabled = false;
+        button.style.backgroundColor = "#00bfff"; // Reset button color
+      });
+
+      explanationElement.textContent = ""; // Clear explanation
+      document.getElementById("next-btn").style.display = "none"; // Hide Next button
+      userSelected = null; // Reset user selection
+    }
+
+    function selectAnswer(selectedOption) {
+      userSelected = selectedOption;
+      const optionButtons = document.querySelectorAll(".options button");
+      const explanationElement = document.getElementById("explanation");
+
+      optionButtons.forEach(button => button.disabled = true); // Disable options after selection
+
+      if (userSelected === quizData[currentQuestion].correct) {
+        optionButtons[userSelected].style.backgroundColor = "green"; // Show correct answer
+      } else {
+        optionButtons[userSelected].style.backgroundColor = "red"; // Highlight wrong answer
+        optionButtons[quizData[currentQuestion].correct].style.backgroundColor = "green"; // Show correct answer
+        wrongAnswers.push(currentQuestion);
+
+        // Display explanation for the wrong answer
+        explanationElement.textContent = `Explanation: ${quizData[currentQuestion].explanation}`;
+      }
+
+      document.getElementById("next-btn").style.display = "inline-block"; // Show Next button
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      document.querySelector(".quiz-container").style.display = "none";
+      document.getElementById("result-container").style.display = "block";
+      const resultElement = document.getElementById("result");
+
+      if (wrongAnswers.length === 0) {
+        resultElement.textContent = "Congratulations! You got all questions correct!";
+      } else {
+        resultElement.textContent = `You got ${wrongAnswers.length} out of ${quizData.length} questions wrong. Review them and try again!`;
+      }
+    }
+
+    // Load the first question when the page loads
+    window.onload = loadQuestion;
+  </script>
+
+</body>
+</html>

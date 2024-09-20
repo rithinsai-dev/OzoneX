@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ozone Awareness</title>
+  
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+  @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+  .playpen-sans-container {
+  font-family: "Playpen Sans", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
     body, html {
       height: 100%;
-      font-family: Arial, sans-serif;
+      /* font-family: Arial, sans-serif; */
       overflow: auto;
       background-color: #000000;
     }
@@ -31,6 +37,7 @@
       z-index: 2;
       color: white;
       text-align: left;
+      font-size: 1.2em;
     }
 
     h1 {
@@ -76,7 +83,7 @@
     .earth {
       width: 100%;
       height: 100%;
-      background-image: url('earth.gif');
+      background-image: url('public/earth.gif');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -208,6 +215,24 @@
       font-size: 1em;
     }
 
+  /*   .info {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;
+  color: #00bfff;
+  padding: 20px;            
+
+.info h1 {
+  margin-right: 20px;       
+}
+ */
+ .info{
+  font-family: "Playpen Sans";
+  text-align: center;
+  color: #00bfff;
+  font-size: 1.2em;
+ }
   </style>
 </head>
 <body>
@@ -222,8 +247,14 @@
 
     <!-- Earth on the right -->
     <div class="earth-container">
-      <div class="earth"></div>
+      <div class="earth">
+
+      </div>
     </div>
+  </div>
+  <div class="info">
+    <h1>If we move in the right direction</h1>
+    <img src="public/image.png" alt="" width="60%" height="10%">
   </div>
 
   <!-- New section with cards to protect the ozone -->
@@ -231,47 +262,71 @@
     <h2>How You Can Help Protect the Ozone Layer</h2>
     <div class="card-container" id="card-container">
       <!-- Card 1 -->
-      <div class="card">
-        <div class="card-title">Avoid CFC Products</div>
-        <div class="card-details">
-          Avoid using products containing harmful chemicals like chlorofluorocarbons (CFCs).
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="card">
-        <div class="card-title">Maintain Refrigeration Equipment</div>
-        <div class="card-details">
-          Ensure your air conditioning and refrigeration equipment is well-maintained to prevent refrigerant leaks.
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="card">
-        <div class="card-title">Use Eco-Friendly Products</div>
-        <div class="card-details">
-          Use eco-friendly household cleaning products to reduce chemical pollution.
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="card">
-        <div class="card-title">Reduce Carbon Emissions</div>
-        <div class="card-details">
-          Minimize the use of vehicles by walking, biking, or using public transport to reduce carbon emissions.
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="card">
-        <div class="card-title">Support Ozone Policies</div>
-        <div class="card-details">
-          Promote and support policies that aim to reduce ozone-depleting substances.
-        </div>
-      </div>
-      <!-- Card 6 -->
-      <div class="card">
-        <div class="card-title">Use Energy Efficient Devices</div>
-        <div class="card-details">
-          Opt for energy-efficient appliances and lighting to decrease energy consumption.
-        </div>
-      </div>
+<div class="card">
+  <a href="#" class="card-link">
+    <img src="public/cfc2.png" alt="Avoid CFC Products Logo" class="card-logo" width="40%">
+  </a>
+  <div class="card-title">Avoid CFC Products</div>
+  <div class="card-details">
+    Avoid using products containing harmful chemicals like chlorofluorocarbons (CFCs).
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+  <a href="#" class="card-link">
+    <img src="public/fridge2.png" alt="Refrigeration Maintenance Logo" class="card-logo"   width="50%">
+  </a>
+  <div class="card-title">Maintain Refrigeration Equipment</div>
+  <div class="card-details">
+    Ensure your air conditioning and refrigeration equipment is well-maintained to prevent refrigerant leaks.
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+  <a href="#" class="card-link">
+    <img src="public/eco.png" alt="Eco-Friendly Products Logo" class="card-logo" width="40%">
+  </a>
+  <div class="card-title">Use Eco-Friendly Products</div>
+  <div class="card-details">
+    Use eco-friendly household cleaning products to reduce chemical pollution.
+  </div>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+  <a href="#" class="card-link">
+    <img src="public/zero.png" alt="Reduce Carbon Emissions Logo" class="card-logo" width="40%">
+  </a>
+  <div class="card-title">Reduce Carbon Emissions</div>
+  <div class="card-details">
+    Minimize the use of vehicles by walking, biking, or using public transport to reduce carbon emissions.
+  </div>
+</div>
+
+<!-- Card 5 -->
+<div class="card">
+  <a href="#" class="card-link">
+    <img src="public/ozone.png" alt="Support Ozone Policies Logo" class="card-logo" width="40%">
+  </a>
+  <div class="card-title">Support Ozone Policies</div>
+  <div class="card-details">
+    Promote and support policies that aim to reduce ozone-depleting substances.
+  </div>
+</div>
+
+<!-- Card 6 -->
+<div class="card">
+  <a href="#" class="card-link">
+    <img src="public/devices2.png" alt="Energy Efficient Devices Logo" class="card-logo" width="60%">
+  </a>
+  <div class="card-title">Use Energy Efficient Devices</div>
+  <div class="card-details">
+    Opt for energy-efficient appliances and lighting to decrease energy consumption.
+  </div>
+</div>
+
     </div>
   </section>
 
