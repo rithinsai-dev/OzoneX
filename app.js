@@ -167,6 +167,8 @@ suggestionsList.innerHTML =  tips;
 
 // Draw marks out of 10 in circular progress
 drawMarksCircle(score, quizData.length);
+
+
 }
 
 function getTipsBasedOnScore(score) {
