@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +17,18 @@
         font-weight: 400;
         font-style: normal;
       }
-    
+      .oswald-info {
+        font-family: "Oswald", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 200;
+        font-style: normal;
+      }
+      .playfair-display-info {
+        font-family: "Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+      }
 .container {
   display: flex;
   justify-content: space-between;
@@ -63,7 +76,7 @@
     }
 
     button:hover {
-      background-color: #009acd;
+      background-color:#00bfff7e ;
     }
 
     .earth-container {
@@ -221,8 +234,7 @@
   margin-right: 20px;       
 }
  */
- .info{
-
+ .info {
   text-align: center;
   color: #00bfff;
   font-size: 1.2em;
