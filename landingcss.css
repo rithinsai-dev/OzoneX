@@ -231,12 +231,12 @@
  
  .air-quality-section {
   width: 300px; /* Adjust as needed */
-  padding: 20px;
+  padding: 0px;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
   color: white;
   text-align: left;
-  position: absolute;
-  top: 20px;
+  position: relative;
+  top: -70px;
   left: 20px;
   border-radius: 10px;
   z-index: 3; /* Ensure it's above other elements */
@@ -245,6 +245,7 @@
 .air-quality-section h2 {
   font-size: 1.5em;
   margin-bottom: 15px;
+  margin-left: -10px;
   color: #00bfff;
 }
 
@@ -252,6 +253,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 30px;
+  margin-left: -15px;
+  margin-top: 
 }
 
 .aqi-card {
@@ -276,4 +280,9 @@
 
 .aqi-description {
   font-size: 0.9em;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
 }
