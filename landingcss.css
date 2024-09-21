@@ -15,21 +15,24 @@
         font-weight: 400;
         font-style: normal;
       }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 100vh;
-      padding: 0 50px;
-      background-image: black;
-    }
+    
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Changed from center to flex-start */
+  height: 100vh;
+  padding: 0 50px;
+  background-image: black;
+}
 
-    .content {
-      z-index: 2;
-      color: white;
-      text-align: left;
-      font-size: 1.2em;
-    }
+.content {
+  z-index: 2;
+  color: white;
+  text-align: left;
+  font-size: 1.2em;
+  flex: 1; /* Added to allow content to take available space */
+}
+
 
     h1 {
       font-size: 3em;
@@ -226,4 +229,51 @@
  }
 
  
- 
+ .air-quality-section {
+  width: 300px; /* Adjust as needed */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  text-align: left;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 10px;
+  z-index: 3; /* Ensure it's above other elements */
+}
+
+.air-quality-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #00bfff;
+}
+
+#air-quality-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aqi-card {
+  background-color: rgba(31, 31, 31, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.aqi-card h3 {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.aqi-value {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.aqi-description {
+  font-size: 0.9em;
+}
